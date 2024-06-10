@@ -1,0 +1,389 @@
+template model
+
+
+        [Key]
+        public int Id { get; set; }
+        
+        [DataType(DataType.Text)]
+        [Display(Name ="العنوان")]
+        public string? Title { get; set; }
+        [Display(Name ="عدد الاسطر")]
+        public int ArrayRow { get; set; }
+        [Display(Name ="عدد الاعمدة")]
+        public int ArrayColmun { get; set; }
+        [DataType(DataType.Text)]
+        [Display(Name ="الوصف")]
+        public string? Descreption { get; set; }
+        [DataType(DataType.Text)]
+        public string? Objectstext { get; set; }
+        [NotMapped]
+        public string[]? ObjectJson { get; set; }
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
+
+
+    Category model
+        [Key]
+        public int Id { get; set; }
+        [Display(Name ="اسم الفئة")]
+        public string? CategoryName { get; set; }
+        [Display(Name ="الفئة الاب")]
+        public int? ParentId { get; set; }
+
+
+
+********* template controller ************
+
+        private readonly ApplicationContext _context;
+
+        public TemplatesController(ApplicationContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Templates
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Templates.ToListAsync());
+        }
+
+        // GET: Templates/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var template = await _context.Templates
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (template == null)
+            {
+                return NotFound();
+            }
+
+            return View(template);
+        }
+
+        // GET: Templates/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Templates/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([FromForm] Template template)
+        {
+            if (ModelState.IsValid)
+            {
+                template.ObjectJson = new string[template.ArrayColmun*template.ArrayRow];
+                for (int i = 0; i < template.ObjectJson.Length; i++)
+                {
+                    template.ObjectJson[i] = "";
+                }
+                template.Objectstext = JsonConvert.SerializeObject(template.ObjectJson);
+
+                _context.Add(template);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(template);
+        }
+
+        // GET: Templates/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var template = await _context.Templates.FindAsync(id);
+            template.ObjectJson = JsonConvert.DeserializeObject<string[]>(template.Objectstext);
+            if (template == null)
+            {
+                return NotFound();
+            }
+            return View(template);
+        }
+
+        // POST: Templates/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [FromForm] Template template)
+        {
+
+            if (id != template.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                    template.Objectstext = JsonConvert.SerializeObject(template.ObjectJson);
+                    _context.Update(template);
+                    await _context.SaveChangesAsync();
+                
+                return RedirectToAction(nameof(Index));
+            }
+            return View(template);
+        }
+
+        // GET: Templates/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var template = await _context.Templates
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (template == null)
+            {
+                return NotFound();
+            }
+
+            return View(template);
+        }
+
+        // POST: Templates/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var template = await _context.Templates.FindAsync(id);
+            if (template != null)
+            {
+                _context.Templates.Remove(template);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool TemplateExists(int id)
+        {
+            return _context.Templates.Any(e => e.Id == id);
+        }
+
+
+********** category controller *************
+
+private readonly ApplicationContext _context;
+
+        public CategoriesController(ApplicationContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Categories
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Categories.ToListAsync());
+        }
+        // GET: Categories/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return View(category);
+        }
+
+        // GET: Categories/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Categories/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,CategoryName,ParentId")] Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(category);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
+        }
+
+        // GET: Categories/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+        // POST: Categories/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CategoryName,ParentId")] Category category)
+        {
+            if (id != category.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(category);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CategoryExists(category.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
+        }
+
+        // GET: Categories/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var category = await _context.Categories
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return View(category);
+        }
+
+        // POST: Categories/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            if (category != null)
+            {
+                _context.Categories.Remove(category);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool CategoryExists(int id)
+        {
+            return _context.Categories.Any(e => e.Id == id);
+        }
+
+
+
+***********************************************************************************
+
+        @model List<Category>
+@{
+    ViewData["Title"] = "Home Page";
+    List<Category> categories = new List<Category>();
+    categories = Model;
+    bool hasChildren(Category category)
+    {
+        return categories.Any(x => x.ParentId == category.Id);
+    }
+    List<Category> GetChildren(Category category)
+    {
+        List<Category> nodes = new List<Category>();
+        nodes = categories.Where(x => x.ParentId == category.Id).ToList();
+        foreach (Category node in nodes)
+        {
+            categories.Remove(node);
+        }
+        return nodes;
+    }
+}
+<h2 class="text-center">قائمة الفئات</h2>
+
+<ul>
+    @for (int i = 0; i < categories.Count; i++)
+    {
+        @if (hasChildren(categories[i]))
+        {
+            <li>
+                <h5>@categories[i].CategoryName</h5>
+            </li>
+            @foreach (Category node in GetChildren(categories[i]))
+            {
+
+                <ul>
+                    <li>@node.CategoryName</li>
+                    @if (hasChildren(node))
+                    {
+                        foreach (Category child in GetChildren(node))
+                        {
+
+                            <li><a asp-action="Index" asp-controller="Templates" asp-route-id="@child.Id">@child.CategoryName</a></li>
+
+                        }
+                        continue;
+                    }
+                    else
+                    {
+                        <ul>
+                            <li><a asp-action="Index" asp-controller="Templates" asp-route-id="@node.Id">@node.CategoryName</a></li>
+                        </ul>
+                    }
+                </ul>
+            }
+            continue;
+        }
+        else
+        {
+            <ul>
+                <li><a asp-action="Index" asp-controller="Templates"
+                        asp-route-id="@categories[i].Id">@categories[i].CategoryName</a></li>
+            </ul>
+        }
+    }
+
+
+</ul>

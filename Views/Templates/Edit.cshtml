@@ -1,0 +1,79 @@
+﻿@model Template
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-center">ادخال بيانات الجدول</h2>
+<hr />
+<div class="row">
+    <div class="">
+        <form asp-action="Edit">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrayRow" class="control-label"></label>
+                <input asp-for="ArrayRow" class="form-control" />
+                <span asp-validation-for="ArrayRow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrayColmun" class="control-label"></label>
+                <input asp-for="ArrayColmun" class="form-control" />
+                <span asp-validation-for="ArrayColmun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descreption" class="control-label"></label>
+                <input asp-for="Descreption" class="form-control" />
+                <span asp-validation-for="Descreption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId"  class="control-label my-3"></label>
+                <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control"></select>
+                
+            </div>
+            <hr>
+            <table class="table table-hover table-dark table-striped-columns text-md-center">
+                <thead>
+                    <tr>
+                        @for (int i = 0; i < Model.ArrayColmun; i++)
+                        {
+                            <th><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson.Length;)
+                        {
+                        <tr>
+                                @for (int j = 0; j < Model.ArrayColmun; j++)
+                                {
+                                <td><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></td>
+                                    i++;
+                                }
+                        </tr>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group  text-center">
+                <input type="submit" value="حفظ الجدول" class="btn btn-primary" />
+                <a class="btn btn-outline-secondary" asp-action="Index">الرجوع الى القائمة</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

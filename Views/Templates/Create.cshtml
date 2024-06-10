@@ -1,0 +1,53 @@
+﻿@model Template
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2 class="text-center">انشاء قالب جديد</h2>
+<hr />
+<div class="row">
+    <div class="">
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label my-3"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrayRow" class="control-label my-3"></label>
+                <input asp-for="ArrayRow" class="form-control" />
+                <span asp-validation-for="ArrayRow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrayColmun" class="control-label my-3"></label>
+                <input asp-for="ArrayColmun" class="form-control" />
+                <span asp-validation-for="ArrayColmun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descreption" class="control-label my-3"></label>
+                <input asp-for="Descreption" class="form-control" />
+                <span asp-validation-for="Descreption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId"  class="control-label my-3"></label>
+                <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control"></select>
+                
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" value="حفظ" class="btn btn-primary my-3" />
+                <a class="btn btn-outline-secondary" asp-action="Index">الرجوع الى القائمة</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
