@@ -251,3 +251,4 @@ C:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram\bin\Debug\net8.0\runtimes
 C:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram\obj\Debug\net8.0\WeeklyProgram.csproj.AssemblyReference.cache
 C:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram\obj\Debug\net8.0\WeeklyPr.3C457D17.Up2Date
 C:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram\bin\Debug\net8.0\libman.json
+c:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram\obj\Debug\net8.0\WeeklyProgram.sourcelink.json

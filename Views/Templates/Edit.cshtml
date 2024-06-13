@@ -8,47 +8,66 @@
 <hr />
 <div class="row">
     <div class="">
-        <form asp-action="Edit">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <input type="hidden" asp-for="ImageUrl">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArrayRow" class="control-label"></label>
+                        <input asp-for="ArrayRow" class="form-control" />
+                        <span asp-validation-for="ArrayRow" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArrayColmun" class="control-label"></label>
+                        <input asp-for="ArrayColmun" class="form-control" />
+                        <span asp-validation-for="ArrayColmun" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Descreption" class="control-label"></label>
+                        <input asp-for="Descreption" class="form-control" />
+                        <span asp-validation-for="Descreption" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CategoryId" class="control-label my-3"></label>
+                        <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control">
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="file" name="image" class="form-control my-3" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="text-center">
+                            <img src="~/uploads/templates/@Model.ImageUrl" alt="image" class="img-thumbnail"
+                                style="width:600px;" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ArrayRow" class="control-label"></label>
-                <input asp-for="ArrayRow" class="form-control" />
-                <span asp-validation-for="ArrayRow" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ArrayColmun" class="control-label"></label>
-                <input asp-for="ArrayColmun" class="form-control" />
-                <span asp-validation-for="ArrayColmun" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descreption" class="control-label"></label>
-                <input asp-for="Descreption" class="form-control" />
-                <span asp-validation-for="Descreption" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoryId"  class="control-label my-3"></label>
-                <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control"></select>
-                
-            </div>
+            <br />
+            <h2 class="text-center">ادخال متغيرات القالب</h2>
             <hr>
             <table class="table table-hover table-dark table-striped-columns text-md-center">
                 <thead>
                     <tr>
                         @for (int i = 0; i < Model.ArrayColmun; i++)
                         {
-                            <th><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></th>
+                            <th><input class="form-control" asp-for="@Model.ObjectJson![i]" type="text"></th>
                         }
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson.Length;)
+                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson!.Length;)
                         {
                         <tr>
                                 @for (int j = 0; j < Model.ArrayColmun; j++)

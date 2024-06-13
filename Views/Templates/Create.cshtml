@@ -8,7 +8,7 @@
 <hr />
 <div class="row">
     <div class="">
-        <form method="post" asp-action="Create">
+        <form method="post" enctype="multipart/form-data" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label my-3"></label>
@@ -34,6 +34,11 @@
                 <label asp-for="CategoryId"  class="control-label my-3"></label>
                 <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" class="form-control"></select>
                 
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label my-3"></label>
+                <input type="file" name="image" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
 
             <div class="form-group text-center">

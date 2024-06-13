@@ -14,13 +14,15 @@ namespace WeeklyProgram.Data
         }
         public DbSet<Template> Templates { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<UserProject> MyProperty { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>()
             .HasMany(c => c.SubCategories)
             .WithOne(c => c.ParentCategory)
             .HasForeignKey(c => c.ParentCategoryId);
-
+            
         base.OnModelCreating(modelBuilder);
     }
     }

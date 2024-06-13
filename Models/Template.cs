@@ -8,13 +8,15 @@ namespace WeeklyProgram
     public class Template
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
         [DataType(DataType.Text)]
         [Display(Name ="العنوان")]
+        [Required(ErrorMessage ="العنوان ضروري!!")]
         public string? Title { get; set; }
 
         [Display(Name ="عدد الاسطر")]
+        [Required(ErrorMessage ="عدد الاسطر ضروري!!")]
         public int ArrayRow { get; set; }
 
         [Display(Name ="عدد الاعمدة")]
@@ -23,6 +25,7 @@ namespace WeeklyProgram
         [Display(Name ="الوصف")]
         public string? Descreption { get; set; }
 
+        [Display(Name ="الصورة")]
         public string? ImageUrl { get; set; }
 
         [DataType(DataType.Text)]

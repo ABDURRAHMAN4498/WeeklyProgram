@@ -3,17 +3,19 @@ using WeeklyProgram.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using WeeklyProgram.Data;
 using WeeklyProgram.Models;
+using WeeklyProgram.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ImageService>();
 
 builder.Services.ConfigureDbContext(builder.Configuration);
 
 var app = builder.Build();
 
-
+#region  seedData configuration settings
 // using (var scope = app.Services.CreateScope())
 // {
 //     var services = scope.ServiceProvider;
@@ -30,7 +32,7 @@ var app = builder.Build();
 //         logger.LogError(ex, "An error occurred while seeding the database.");
 //     }
 // }
-
+#endregion
 
 
 // Configure the HTTP request pipeline.

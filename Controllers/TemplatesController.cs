@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using WeeklyProgram;
 using WeeklyProgram.Data;
-using WeeklyProgram.ViewModel;
 
 namespace WeeklyProgram.Controllers
 {
@@ -49,12 +43,7 @@ namespace WeeklyProgram.Controllers
         // GET: Templates/Create
         public IActionResult Create()
         {
-            List<CategoryViewModel> categoreis = new List<CategoryViewModel>();
-            categoreis = _context.Categories
-            .Where(c => c.ParentCategoryId != null)
-            .Select(c => new CategoryViewModel() 
-            {Id= c.Id,Name= c.Name }).ToList();
-            ViewData["CategoryId"] = new SelectList(categoreis, "Id", "Name");
+            ViewData["CategoryId"] = new SelectList(_context.Categories.Where(c => c.ParentCategoryId != null), "Id", "Name");
             return View();
         }
 
@@ -63,11 +52,24 @@ namespace WeeklyProgram.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([FromForm] Template template)
+        public async Task<IActionResult> Create([FromForm] Template template, IFormFile image)
         {
-            template.ImageUrl = $"{template.Id}";
+            if (image.Length == 0 || image == null)
+            {
+                throw new Exception("لا يمكن انشاء قالب بدون صورة");
+            }
+            string uploadsFolder = Path.Combine("wwwroot", "uploads", "templates");
+            var uniqueFileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await image.CopyToAsync(fileStream);
+            }
+            template.ImageUrl = uniqueFileName;
             if (ModelState.IsValid)
             {
+
                 template.ObjectJson = new string[template.ArrayColmun * template.ArrayRow];
                 for (int i = 0; i < template.ObjectJson.Length; i++)
                 {
@@ -93,7 +95,7 @@ namespace WeeklyProgram.Controllers
             var template = await _context.Templates.FindAsync(id);
             template!.Category = _context.Categories.Find(template.CategoryId);
             template.ObjectJson = JsonConvert.DeserializeObject<string[]>(template.Objectstext!);
-            ViewData["CategoryId"] = new SelectList(_context.Categories.Where(c=>c.ParentCategoryId!=null), "Id", "Name", template.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories.Where(c => c.ParentCategoryId != null), "Id", "Name", template.CategoryId);
             if (template == null)
             {
                 return NotFound();
@@ -106,20 +108,37 @@ namespace WeeklyProgram.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [FromForm] Template template)
+        public async Task<IActionResult> Edit(int id, [FromForm] Template template, IFormFile image)
         {
-            
             if (id != template.Id)
             {
                 return NotFound();
             }
-            template.ImageUrl = $"{template.Id}";
+            string fileName = string.Empty;
+            if (image != null)
+            {
+                string uploads = Path.Combine("wwwroot", "uploads", "templates");
+                fileName = template.ImageUrl;
+                string fullPath = Path.Combine(uploads, fileName);
+                if (System.IO.File.Exists(fullPath))
+                {
+                    System.IO.File.Delete(fullPath);
+                }
+                fileName = template.ImageUrl == null ?
+                 Guid.NewGuid() + Path.GetExtension(image.FileName)
+                : template.ImageUrl+Path.GetExtension(image.FileName);
+                var filePath = Path.Combine(uploads, fileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(fileStream);
+                }
+            }
+            template.ImageUrl = fileName;
             if (ModelState.IsValid)
             {
                 template.Objectstext = JsonConvert.SerializeObject(template.ObjectJson);
                 _context.Update(template);
                 await _context.SaveChangesAsync();
-
                 return RedirectToAction(nameof(Index));
             }
             return View(template);
@@ -132,14 +151,12 @@ namespace WeeklyProgram.Controllers
             {
                 return NotFound();
             }
-
             var template = await _context.Templates
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (template == null)
             {
                 return NotFound();
             }
-
             return View(template);
         }
 

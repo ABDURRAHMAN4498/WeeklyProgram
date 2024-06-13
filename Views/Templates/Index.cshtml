@@ -22,7 +22,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Descreption)
             </th>
-
+            <th>
+                @Html.DisplayNameFor(model=>model.ImageUrl)
+            </th>
             <th>#</th>
         </tr>
     </thead>
@@ -40,7 +42,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Descreption)
                 </td>
-
+                <td>
+                    <img src="~/uploads/templates/@item.ImageUrl" style="Width:60px;" alt="image" class="img-fluid" />
+                </td>
                 <td>
                     <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
                             class="fa-solid fa-pen-to-square"></i></a> |

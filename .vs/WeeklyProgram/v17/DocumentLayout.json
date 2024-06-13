@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\views\\templates\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:views\\templates\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\views\\templates\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:views\\templates\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\controllers\\templatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:controllers\\templatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,16 +19,12 @@
       "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:views\\templates\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\models\\userprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:models\\userprojects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\models\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:models\\template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|c:\\users\\asus\\desktop\\vscodefile\\aborami\\weeklyprogram\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D5D7BF3-D24D-4E01-A404-786053F2D98B}|WeeklyProgram.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,66 +47,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TemplatesController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Controllers\\TemplatesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TemplatesController.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Controllers\\TemplatesController.cs",
-              "RelativeToolTip": "Controllers\\TemplatesController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAB8AAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T12:27:31.726Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Templates\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Index.cshtml",
+              "RelativeToolTip": "Views\\Templates\\Index.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAC0AAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T13:44:50.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Templates\\Create.cshtml",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Create.cshtml",
-              "RelativeToolTip": "Views\\Templates\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Templates\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Templates\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-07T12:27:24.855Z",
+              "WhenOpened": "2024-06-12T13:21:28.463Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Category.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Models\\Category.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\Category.cs",
-              "RelativeToolTip": "Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAANAAAA",
+              "Title": "UserProjects.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\UserProjects.cs",
+              "RelativeDocumentMoniker": "Models\\UserProjects.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\UserProjects.cs",
+              "RelativeToolTip": "Models\\UserProjects.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T09:00:29.27Z",
+              "WhenOpened": "2024-06-12T12:37:16.71Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Template.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\Template.cs",
-              "RelativeDocumentMoniker": "Models\\Template.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\Template.cs",
-              "RelativeToolTip": "Models\\Template.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T09:00:22.303Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Templates\\Create.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Views\\Templates\\Create.cshtml",
+              "RelativeToolTip": "Views\\Templates\\Create.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T12:26:39.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "Controllers\\CategoriesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Title": "TemplatesController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Controllers\\TemplatesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TemplatesController.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Controllers\\TemplatesController.cs",
+              "RelativeToolTip": "Controllers\\TemplatesController.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAHQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T12:39:38.493Z",
+              "WhenOpened": "2024-06-12T12:23:49.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Template.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\Template.cs",
+              "RelativeDocumentMoniker": "Models\\Template.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\Models\\Template.cs",
+              "RelativeToolTip": "Models\\Template.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T12:23:20.983Z",
               "EditorCaption": ""
             }
           ]
