@@ -12,8 +12,8 @@ using WeeklyProgram.Data;
 namespace WeeklyProgram.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240608114042_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240621125042_initialCreate")]
+    partial class initialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,13 +46,11 @@ namespace WeeklyProgram.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("WeeklyProgram.Template", b =>
+            modelBuilder.Entity("WeeklyProgram.Models.Template", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ArrayColmun")
                         .HasColumnType("int");
@@ -73,6 +71,7 @@ namespace WeeklyProgram.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -80,6 +79,37 @@ namespace WeeklyProgram.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Templates");
+                });
+
+            modelBuilder.Entity("WeeklyProgram.Models.UserProject", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Objectstext")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjectTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("TemplateId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TemplateId");
+
+                    b.ToTable("UserProjects");
                 });
 
             modelBuilder.Entity("WeeklyProgram.Category", b =>
@@ -91,7 +121,7 @@ namespace WeeklyProgram.Migrations
                     b.Navigation("ParentCategory");
                 });
 
-            modelBuilder.Entity("WeeklyProgram.Template", b =>
+            modelBuilder.Entity("WeeklyProgram.Models.Template", b =>
                 {
                     b.HasOne("WeeklyProgram.Category", "Category")
                         .WithMany()
@@ -100,6 +130,15 @@ namespace WeeklyProgram.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("WeeklyProgram.Models.UserProject", b =>
+                {
+                    b.HasOne("WeeklyProgram.Models.Template", "Template")
+                        .WithMany()
+                        .HasForeignKey("TemplateId");
+
+                    b.Navigation("Template");
                 });
 
             modelBuilder.Entity("WeeklyProgram.Category", b =>

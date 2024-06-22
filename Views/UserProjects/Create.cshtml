@@ -1,0 +1,102 @@
+﻿@model ProjectViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div>
+    <br>
+</div>
+
+<h3 class="text-center">انشاء مشروع</h3>
+<hr />
+<div class="row">
+    <div class="">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id">
+            <input type="hidden" asp-for="ImageUrl">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="ProjectName" class="control-label"></label>
+                        <input asp-for="ProjectName" class="form-control my-1" placeholder="اعط اسم للمشروع" required />
+                        <span asp-validation-for="ProjectName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control my-1" disabled />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArrayRow" class="control-label"></label>
+                        <input asp-for="ArrayRow" class="form-control my-1" disabled />
+                        <span asp-validation-for="ArrayRow" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ArrayColmun" class="control-label"></label>
+                        <input asp-for="ArrayColmun" class="form-control my-1" disabled />
+                        <span asp-validation-for="ArrayColmun" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Descreption" class="control-label"></label>
+                        <input asp-for="Descreption" class="form-control my-1" disabled />
+                        <span asp-validation-for="Descreption" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <div class="text-center">
+                            <img src="~/uploads/templates/@Model.ImageUrl" alt="image" class="img-thumbnail"
+                                style="width:600px;" />
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-center">ادخال متغيرات القالب</h2>
+                <hr>
+                <div>
+                    <table class="table table-hover table-dark table-striped-columns text-md-center">
+                        <thead>
+                            <tr>
+                                        @for (int i = 0; i < Model.ArrayColmun; i++)
+                                        {
+                                    <th><input class="form-control" asp-for="@Model.ObjectJson![i]" type="text"></th>
+                                        }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson.Length;)
+                                        {
+                                <tr>
+                                                @for (int j = 0; j < Model.ArrayColmun; j++)
+                                                {
+                                        <td><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></td>
+                                                    i++;
+                                                }
+                                </tr>
+                                        }
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="انشاء" class="btn btn-primary" />
+                    <a class="btn btn-outline-secondary" asp-action="Index">الرجوع الى القائمة</a>
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

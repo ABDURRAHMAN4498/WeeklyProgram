@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using WeeklyProgram.Models;
 
-namespace WeeklyProgram
+namespace WeeklyProgram.Models
 {
     public class Template
     {
         [Key]
-        public int Id { get; set; } 
+        public Guid Id { get; set; } 
 
         [DataType(DataType.Text)]
         [Display(Name ="العنوان")]
@@ -35,7 +35,7 @@ namespace WeeklyProgram
         public string[]? ObjectJson { get; set; }
         [Display(Name ="الفئة")]
         public int CategoryId { get; set; }
-
+        
         public Category? Category { get; set; }
 
         

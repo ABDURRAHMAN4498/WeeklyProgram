@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OhnJgBr6aULROZjRkmjs0MI1e8P4gDGyclI9/dFfea0=",
+  "Hash": "vtKDEvKOd/mTdKCqrwkDF5jnokRwFFu5MCMc0rp2GbQ=",
   "Source": "WeeklyProgram",
   "BasePath": "_content/WeeklyProgram",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WeeklyProgram.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\corel\\Backup_of_Untitled-1.cdr",
+      "SourceId": "WeeklyProgram",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\",
+      "BasePath": "_content/WeeklyProgram",
+      "RelativePath": "corel/Backup_of_Untitled-1.cdr",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\corel\\Backup_of_Untitled-1.cdr"
     },
     {
       "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\corel\\Untitled-1.cdr",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\fonts\\Amiri-Regular.ttf",
+      "SourceId": "WeeklyProgram",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\",
+      "BasePath": "_content/WeeklyProgram",
+      "RelativePath": "fonts/Amiri-Regular.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\Amiri-Regular.ttf"
     },
     {
       "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\html\\Error.html",
@@ -3893,12 +3931,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\3.jpeg",
+      "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\c801ec9a-7286-4faa-91af-2833f3de4935.png",
       "SourceId": "WeeklyProgram",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\",
       "BasePath": "_content/WeeklyProgram",
-      "RelativePath": "uploads/templates/3.jpeg",
+      "RelativePath": "uploads/templates/c801ec9a-7286-4faa-91af-2833f3de4935.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3909,45 +3947,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\templates\\3.jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\b1a5eb14-58f3-4abb-a3d6-c13be57dee37.jpeg",
-      "SourceId": "WeeklyProgram",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\",
-      "BasePath": "_content/WeeklyProgram",
-      "RelativePath": "uploads/templates/b1a5eb14-58f3-4abb-a3d6-c13be57dee37.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\templates\\b1a5eb14-58f3-4abb-a3d6-c13be57dee37.jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\c970d80d-2a57-404f-82fd-61f9be8c0bab.png",
-      "SourceId": "WeeklyProgram",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\",
-      "BasePath": "_content/WeeklyProgram",
-      "RelativePath": "uploads/templates/c970d80d-2a57-404f-82fd-61f9be8c0bab.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\templates\\c970d80d-2a57-404f-82fd-61f9be8c0bab.png"
+      "OriginalItemSpec": "wwwroot\\uploads\\templates\\c801ec9a-7286-4faa-91af-2833f3de4935.png"
     }
   ]
 }

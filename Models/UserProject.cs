@@ -8,11 +8,16 @@ namespace WeeklyProgram.Models
         [Key]
         public Guid Id { get; set; }
         public string? UserId { get; set; }
-        public string? TemplateId { get; set; }
+        [ForeignKey("Template")]
+        public Guid? TemplateId { get; set; }
+        
         public Template? Template { get; set; }
+        [Display(Name ="اسم المشروع")]
         public string? ProjectTitle { get; set; }
         public string? Objectstext { get; set; }
+        [Display(Name ="الصورة")]
         public string? ImageUrl { get; set; }
+        [Display(Name ="تاريخ الانشاء")]
         [DataType(DataType.Date)]
         public DateTime CreatedDate { get; set; }
     }

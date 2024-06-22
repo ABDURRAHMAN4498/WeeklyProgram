@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using WeeklyProgram.Data;
+using WeeklyProgram.Models;
 
 namespace WeeklyProgram.Controllers
 {
@@ -23,7 +24,7 @@ namespace WeeklyProgram.Controllers
         }
 
         // GET: Templates/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
             {
@@ -54,12 +55,13 @@ namespace WeeklyProgram.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([FromForm] Template template, IFormFile image)
         {
+            template.Id = Guid.NewGuid();
             if (image.Length == 0 || image == null)
             {
                 throw new Exception("لا يمكن انشاء قالب بدون صورة");
             }
             string uploadsFolder = Path.Combine("wwwroot", "uploads", "templates");
-            var uniqueFileName = Guid.NewGuid() + Path.GetExtension(image.FileName);
+            var uniqueFileName = template.Id.ToString() + Path.GetExtension(image.FileName);
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
             using (var fileStream = new FileStream(filePath, FileMode.Create))
@@ -85,7 +87,7 @@ namespace WeeklyProgram.Controllers
         }
 
         // GET: Templates/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(Guid id)
         {
             if (id == null)
             {
@@ -108,8 +110,9 @@ namespace WeeklyProgram.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [FromForm] Template template, IFormFile image)
+        public async Task<IActionResult> Edit(Guid id, [FromForm] Template template, IFormFile image)
         {
+            
             if (id != template.Id)
             {
                 return NotFound();
@@ -124,15 +127,14 @@ namespace WeeklyProgram.Controllers
                 {
                     System.IO.File.Delete(fullPath);
                 }
-                fileName = template.ImageUrl == null ?
-                 Guid.NewGuid() + Path.GetExtension(image.FileName)
-                : template.ImageUrl+Path.GetExtension(image.FileName);
+                fileName =  template.Id.ToString() + Path.GetExtension(image.FileName);
                 var filePath = Path.Combine(uploads, fileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await image.CopyToAsync(fileStream);
                 }
             }
+            ViewData["CategoryId"] = new SelectList(_context.Categories.Where(c => c.ParentCategoryId != null), "Id", "Name");
             template.ImageUrl = fileName;
             if (ModelState.IsValid)
             {
@@ -145,7 +147,7 @@ namespace WeeklyProgram.Controllers
         }
 
         // GET: Templates/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
             {
@@ -163,7 +165,7 @@ namespace WeeklyProgram.Controllers
         // POST: Templates/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var template = await _context.Templates.FindAsync(id);
             if (template != null)
@@ -175,7 +177,7 @@ namespace WeeklyProgram.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TemplateExists(int id)
+        private bool TemplateExists(Guid id)
         {
             return _context.Templates.Any(e => e.Id == id);
         }

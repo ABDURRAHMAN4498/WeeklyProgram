@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WeeklyProgram.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\corel\\Backup_of_Untitled-1.cdr",
+      "PackagePath": "staticwebassets\\corel\\Backup_of_Untitled-1.cdr"
+    },
+    {
       "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\corel\\Untitled-1.cdr",
       "PackagePath": "staticwebassets\\corel\\Untitled-1.cdr"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\fonts\\Amiri-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Amiri-Regular.ttf"
     },
     {
       "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\html\\Error.html",
@@ -813,16 +821,8 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.min.map"
     },
     {
-      "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\3.jpeg",
-      "PackagePath": "staticwebassets\\uploads\\templates\\3.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\b1a5eb14-58f3-4abb-a3d6-c13be57dee37.jpeg",
-      "PackagePath": "staticwebassets\\uploads\\templates\\b1a5eb14-58f3-4abb-a3d6-c13be57dee37.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\c970d80d-2a57-404f-82fd-61f9be8c0bab.png",
-      "PackagePath": "staticwebassets\\uploads\\templates\\c970d80d-2a57-404f-82fd-61f9be8c0bab.png"
+      "Id": "C:\\Users\\asus\\Desktop\\vscodefile\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\c801ec9a-7286-4faa-91af-2833f3de4935.png",
+      "PackagePath": "staticwebassets\\uploads\\templates\\c801ec9a-7286-4faa-91af-2833f3de4935.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WeeklyProgram.Microsoft.AspNetCore.StaticWebAssets.props",

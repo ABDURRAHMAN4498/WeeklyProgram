@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace WeeklyProgram.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class initialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,9 +34,8 @@ namespace WeeklyProgram.Migrations
                 name: "Templates",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ArrayRow = table.Column<int>(type: "int", nullable: false),
                     ArrayColmun = table.Column<int>(type: "int", nullable: false),
                     Descreption = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -54,6 +54,28 @@ namespace WeeklyProgram.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UserProjects",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TemplateId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ProjectTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Objectstext = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProjects", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserProjects_Templates_TemplateId",
+                        column: x => x.TemplateId,
+                        principalTable: "Templates",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_ParentCategoryId",
                 table: "Categories",
@@ -63,11 +85,19 @@ namespace WeeklyProgram.Migrations
                 name: "IX_Templates_CategoryId",
                 table: "Templates",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserProjects_TemplateId",
+                table: "UserProjects",
+                column: "TemplateId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "UserProjects");
+
             migrationBuilder.DropTable(
                 name: "Templates");
 

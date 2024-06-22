@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WeeklyProgram.Models.UserProject>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center">مشاريعي</h2>
+<hr>
+
+<p>
+    <a class="btn btn-success" asp-controller="UserProjects" asp-action="TemplateList">انشاء مشروع</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectTitle)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectTitle)
+                </td>
+                
+                <td>
+                    <img src="~/uploads/templates/@item.ImageUrl" alt="image" style="width:60px"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

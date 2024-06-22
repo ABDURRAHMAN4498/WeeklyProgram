@@ -1,0 +1,22 @@
+@model IEnumerable<Template>
+@{
+    ViewData["Title"] = "قائمة القوالب";
+}
+<h2 class="text-center">قائمة القوالب</h2>
+<div class="row justify-content-center">
+    @foreach (var item in Model)
+    {
+
+        <div class="card m-1" style="width: 15rem;">
+            <img src="~/uploads/templates/@item.ImageUrl" class="card-img-top" alt="image">
+            <div class="card-body justify-content-baseline">
+                <h5 class="card-title">@item.Title</h5>
+                <p class="card-text">
+                    @item.Descreption
+                </p>
+                <a asp-action="Create" asp-controller="UserProjects" asp-route-id="@item.Id" class="btn btn-primary">انشاء مشروع</a>
+            </div>
+        </div>
+        
+    }
+</div>

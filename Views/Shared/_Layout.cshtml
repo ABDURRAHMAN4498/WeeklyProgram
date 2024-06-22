@@ -1,36 +1,42 @@
 ﻿<!DOCTYPE html>
 <html lang="en" dir="rtl">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WeeklyProgram</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css"/>
-    <link rel="stylesheet" href="~/WeeklyProgram.styles.css"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/WeeklyProgram.styles.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css">
 </head>
+
 <body>
     <header>
         <div class="container-sm my-3 rounded align-middle shadow-lg ">
-        <partial name="_Navbar"/>
-        @RenderSection("Header",false)
+            <partial name="_Navbar" />
+            @RenderSection("Header", false)
         </div>
     </header>
     <div class="container rounded shadow-lg">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+
+    </div>
+    <div class="container">
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2024 - WeeklyProgram - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - WeeklyProgram - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/font-awesome/js/all.min.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

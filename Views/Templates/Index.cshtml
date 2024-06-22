@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WeeklyProgram.Template>
+﻿@model IEnumerable<Template>
 
 @{
     ViewData["Title"] = "Index";
@@ -6,7 +6,7 @@
 
 
 
-<p >
+<p>
     <a class="btn btn-success my-3" asp-action="Create">انشاء قالب جديد</a>
 </p>
 <table class="table table-hover table-dark table-striped-columns text-md-center">
@@ -18,12 +18,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Category.Name)
             </th>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.Descreption)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.ImageUrl)
+                @Html.DisplayNameFor(model => model.ImageUrl)
             </th>
             <th>#</th>
         </tr>
@@ -38,7 +38,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Category.Name)
                 </td>
-                
+
                 <td>
                     @Html.DisplayFor(modelItem => item.Descreption)
                 </td>
