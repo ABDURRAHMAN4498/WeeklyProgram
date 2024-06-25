@@ -18,15 +18,12 @@ namespace WeeklyProgram.Controllers
 
         public IActionResult Index()
         {
-            
-
             var categories = _context.Categories
-            .Include(c => c.SubCategories)
+            .Include(c => c.SubCategories)!
                 .ThenInclude(sc => sc.SubCategories)
             .Where(c => c.ParentCategoryId == null)
             .ToList();
             return View(categories);
-
         }
         
         public IActionResult Privacy()

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using WeeklyProgram.Data;
@@ -35,14 +26,14 @@ namespace WeeklyProgram.Controllers
         }
 
         // GET: UserProjects/Details/5
-        public async Task<IActionResult> Details(Guid id)
+        public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            UserProject userProject = await _context.UserProjects.FirstOrDefaultAsync(m => m.Id == id);
+            UserProject? userProject = await _context.UserProjects.FirstOrDefaultAsync(m => m.Id == id);
 
             Template template = _context.Templates.Find(userProject!.TemplateId)!;
 
@@ -89,10 +80,10 @@ namespace WeeklyProgram.Controllers
                 ArrayColmun = template.ArrayColmun,
                 Descreption = template.Descreption,
                 ProjectName = userProject.ProjectTitle
-
             };
             string servicePrinter = projectViewModel.TemplateId.ToString().ToUpper();
-            if (servicePrinter == "C801EC9A-7286-4FAA-91AF-2833F3DE4935")
+            if (servicePrinter == "6F203499-E35B-4198-B850-23D308626A76" ||
+             servicePrinter == "594158D7-89DD-496D-8954-8E747154AAC1")
             {
                 return File(_imageService.ImagePrinter(projectViewModel), "image/png");
             }
@@ -123,7 +114,7 @@ namespace WeeklyProgram.Controllers
 
             ProjectViewModel projectViewModel = new ProjectViewModel();
 
-            projectViewModel.ObjectJson = JsonConvert.DeserializeObject<string[]>(template.Objectstext);
+            projectViewModel.ObjectJson = JsonConvert.DeserializeObject<string[]>(template.Objectstext!);
             projectViewModel.ArrayColmun = template.ArrayColmun;
             projectViewModel.ArrayRow = template.ArrayRow;
             projectViewModel.ImageUrl = template.ImageUrl;
@@ -173,12 +164,24 @@ namespace WeeklyProgram.Controllers
                 return NotFound();
             }
 
-            var userProject = await _context.UserProjects.FindAsync(id);
-            if (userProject == null)
+            UserProject? userProject = await _context.UserProjects.FindAsync(id);
+            Template template = _context.Templates.Find(userProject!.TemplateId)!;
+            ProjectViewModel projectViewModel = new ProjectViewModel()
             {
-                return NotFound();
-            }
-            return View(userProject);
+                TemplateId = (Guid)userProject.TemplateId!,
+                Id = userProject.Id,
+                ObjectJson = JsonConvert.DeserializeObject<string[]>(userProject.Objectstext!),
+                ImageUrl = userProject.ImageUrl,
+                Title = template.Title,
+                ArrayRow = template.ArrayRow,
+                ArrayColmun = template.ArrayColmun,
+                Descreption = template.Descreption,
+                ProjectName = userProject.ProjectTitle
+
+            };
+
+            
+            return View(projectViewModel);
         }
 
         // POST: UserProjects/Edit/5

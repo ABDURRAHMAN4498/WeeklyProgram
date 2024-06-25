@@ -3,7 +3,7 @@
     ViewData["Title"] = "قائمة القوالب";
 }
 <h2 class="text-center">قائمة القوالب</h2>
-<div class="row justify-content-center">
+<div class="row ">
     @foreach (var item in Model)
     {
 
@@ -17,6 +17,7 @@
                 <a asp-action="Create" asp-controller="UserProjects" asp-route-id="@item.Id" class="btn btn-primary">انشاء مشروع</a>
             </div>
         </div>
-        
+
+         
     }
 </div>

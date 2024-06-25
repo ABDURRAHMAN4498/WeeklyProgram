@@ -87,7 +87,7 @@ namespace WeeklyProgram.Controllers
         }
 
         // GET: Templates/Edit/5
-        public async Task<IActionResult> Edit(Guid id)
+        public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
             {
@@ -110,31 +110,37 @@ namespace WeeklyProgram.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [FromForm] Template template, IFormFile image)
+        public async Task<IActionResult> Edit(Guid id, [FromForm] Template template, IFormFile? image)
         {
-            
+
             if (id != template.Id)
             {
                 return NotFound();
             }
-            string fileName = string.Empty;
+            string fileName = template.ImageUrl!;
             if (image != null)
             {
                 string uploads = Path.Combine("wwwroot", "uploads", "templates");
-                fileName = template.ImageUrl;
+                fileName = template.ImageUrl!;
                 string fullPath = Path.Combine(uploads, fileName);
                 if (System.IO.File.Exists(fullPath))
                 {
                     System.IO.File.Delete(fullPath);
                 }
-                fileName =  template.Id.ToString() + Path.GetExtension(image.FileName);
+                fileName = template.Id.ToString() + Path.GetExtension(image.FileName);
                 var filePath = Path.Combine(uploads, fileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await image.CopyToAsync(fileStream);
                 }
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories.Where(c => c.ParentCategoryId != null), "Id", "Name");
+
+            string[] array = new string[template.ArrayColmun * template.ArrayRow];
+            for (int i = 0; i < template.ObjectJson!.Length; i++)
+            {
+                array[i] = "";
+            }
+            template.ObjectJson = array;
             template.ImageUrl = fileName;
             if (ModelState.IsValid)
             {

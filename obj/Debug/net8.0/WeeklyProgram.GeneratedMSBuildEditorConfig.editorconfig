@@ -17,111 +17,111 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WeeklyProgram
 build_property.RootNamespace = WeeklyProgram
-build_property.ProjectDir = c:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram\
+build_property.ProjectDir = C:\Users\Abdurrahman\Desktop\Aborami\WeeklyProgram\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\asus\Desktop\vscodefile\Aborami\WeeklyProgram
+build_property.MSBuildProjectDirectory = C:\Users\Abdurrahman\Desktop\Aborami\WeeklyProgram
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Categories/Create.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Categories/Delete.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Categories/Details.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Categories/Edit.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Categories/Index.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Home/Index.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Home/Privacy.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Home/_CategoryTree.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Home/_CategoryTree.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2F0ZWdvcnlUcmVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Shared/Error.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Shared/_Navbar.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Shared/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Templates/Create.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Templates/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Templates/Delete.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Templates/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Templates/Details.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Templates/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Templates/Edit.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Templates/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Templates/Index.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Templates/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/UserProjects/Create.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/UserProjects/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2plY3RzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/UserProjects/Delete.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/UserProjects/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2plY3RzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/UserProjects/Details.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/UserProjects/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2plY3RzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/UserProjects/Edit.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/UserProjects/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2plY3RzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/UserProjects/Index.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/UserProjects/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2plY3RzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/UserProjects/TemplateList.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/UserProjects/TemplateList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2plY3RzXFRlbXBsYXRlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/_ViewImports.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/_ViewStart.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/asus/Desktop/vscodefile/Aborami/WeeklyProgram/Views/Shared/_Layout.cshtml]
+[C:/Users/Abdurrahman/Desktop/Aborami/WeeklyProgram/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-uhm0npzn8p

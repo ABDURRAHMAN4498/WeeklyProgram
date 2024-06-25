@@ -61,23 +61,23 @@
                     <tr>
                         @for (int i = 0; i < Model.ArrayColmun; i++)
                         {
-                            <th><input class="form-control" asp-for="@Model.ObjectJson![i]" type="text"></th>
+                            <th><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></th>
                         }
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    @for (int i = Model.ArrayColmun; i < Model.ObjectJson!.Length;)
+                    {
                     <tr>
-                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson!.Length;)
+                        @for (int j = 0; j < Model.ArrayColmun; j++)
                         {
-                        <tr>
-                                @for (int j = 0; j < Model.ArrayColmun; j++)
-                                {
-                                <td><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></td>
-                                    i++;
-                                }
-                        </tr>
+                            <td><input class="form-control" asp-for="@Model.ObjectJson[i]" type="text"></td>
+                            i++;
                         }
                     </tr>
+                    }
+                
                 </tbody>
             </table>
 
