@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\fonts\\Cairo-VariableFont_slnt,wght.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Cairo-VariableFont_slnt,wght.ttf"
+    },
+    {
       "Id": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\html\\Error.html",
       "PackagePath": "staticwebassets\\html\\Error.html"
     },

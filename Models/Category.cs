@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using WeeklyProgram.Models;
 
-namespace WeeklyProgram
+namespace WeeklyProgram.Models
 {
     public class Category
     {

@@ -1,14 +1,13 @@
-﻿@model WeeklyProgram.Category
+﻿@model Category
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
 <div>
-    <h4>Category</h4>
-    <hr />
+    <h4 class="text-center">تفاصيل الفئة</h4>
+    <hr />  
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -25,6 +24,6 @@
     </dl>
 </div>
 <div class="text-center">
-    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id">تعديل</a> |
-    <a class="btn btn-outline-secondary" asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
+    <a class="btn btn-outline-secondary" asp-action="Index"><i class="fa-solid fa-share fa-fade"></i> الرجوع الى القائمة</a>
 </div>

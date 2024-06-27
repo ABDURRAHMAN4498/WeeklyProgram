@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6rjs2oxB/5xGXUilSW7E2OwizeyRoHd821eQvodRz+s=",
+  "Hash": "DqIjwVl2Vv0B8kUTuDLX+K9Xd9PRcyKIcnjn+5KT5qg=",
   "Source": "WeeklyProgram",
   "BasePath": "_content/WeeklyProgram",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\fonts\\Cairo-VariableFont_slnt,wght.ttf",
+      "SourceId": "WeeklyProgram",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\",
+      "BasePath": "_content/WeeklyProgram",
+      "RelativePath": "fonts/Cairo-VariableFont_slnt,wght.ttf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\fonts\\Cairo-VariableFont_slnt,wght.ttf"
     },
     {
       "Identity": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\html\\Error.html",

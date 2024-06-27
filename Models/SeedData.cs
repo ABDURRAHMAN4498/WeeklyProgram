@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WeeklyProgram.Data;
+using WeeklyProgram.Models;
 
 namespace WeeklyProgram
 {

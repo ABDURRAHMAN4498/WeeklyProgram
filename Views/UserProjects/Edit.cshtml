@@ -5,15 +5,15 @@
 
 }
 
-
-
 <h4 class="text-center">تعديل المشروع</h4>
 <hr />
 <div class="row">
-    <form action="Edit" method="post">
+    <form asp-action="Edit" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Id">
         <input type="hidden" asp-for="ImageUrl">
+        <input type="hidden" asp-for="TemplateId">
+        <input type="hidden" asp-for="CurrentDate">
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
@@ -24,29 +24,30 @@
                 <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
                     <input asp-for="Title" class="form-control my-1" disabled />
-                    <span asp-validation-for="Title" class="text-danger"></span>
+
                 </div>
                 <div class="form-group">
                     <label asp-for="ArrayRow" class="control-label"></label>
                     <input asp-for="ArrayRow" class="form-control my-1" disabled />
-                    <span asp-validation-for="ArrayRow" class="text-danger"></span>
+
                 </div>
                 <div class="form-group">
                     <label asp-for="ArrayColmun" class="control-label"></label>
                     <input asp-for="ArrayColmun" class="form-control my-1" disabled />
-                    <span asp-validation-for="ArrayColmun" class="text-danger"></span>
+
                 </div>
                 <div class="form-group">
                     <label asp-for="Descreption" class="control-label"></label>
                     <input asp-for="Descreption" class="form-control my-1" disabled />
-                    <span asp-validation-for="Descreption" class="text-danger"></span>
+
                 </div>
             </div>
 
             <div class="col-6">
                 <div class="form-group">
                     <div class="text-center">
-                        <img src="~/uploads/templates/@Model.ImageUrl" alt="image" class="img-thumbnail" style="width:600px;" />
+                        <img src="~/uploads/templates/@Model.ImageUrl" alt="image" class="img-thumbnail"
+                            style="width:600px;" />
                     </div>
                 </div>
             </div>
@@ -65,7 +66,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         @for (int i = Model.ArrayColmun; i < Model.ObjectJson.Length;)
                         {
                             <tr>
@@ -82,19 +83,12 @@
                 </table>
             </div>
             <div class="form-group text-center">
-                <input type="submit" value="انشاء" class="btn btn-primary" />
+                <input type="submit" value="حفظ" class="btn btn-primary" />
                 <a class="btn btn-outline-secondary" asp-action="Index">الرجوع الى القائمة</a>
             </div>
     </form>
-
-
-
-   
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

@@ -59,13 +59,13 @@ namespace WeeklyProgram.Controllers
 
             return View(projectViewModel);
         }
-       
+
 
 
 
         public IActionResult ProcessImage(Guid? id)
         {
-            UserProject? userProject =  _context.UserProjects.Find(id);
+            UserProject? userProject = _context.UserProjects.Find(id);
 
             Template template = _context.Templates.Find(userProject!.TemplateId)!;
 
@@ -91,7 +91,7 @@ namespace WeeklyProgram.Controllers
             {
                 throw new Exception("هذا القالب غير موجود");
             }
-            
+
         }
 
 
@@ -151,11 +151,6 @@ namespace WeeklyProgram.Controllers
             return View(userProject);
         }
 
-
-
-
-
-
         // GET: UserProjects/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
@@ -176,11 +171,12 @@ namespace WeeklyProgram.Controllers
                 ArrayRow = template.ArrayRow,
                 ArrayColmun = template.ArrayColmun,
                 Descreption = template.Descreption,
-                ProjectName = userProject.ProjectTitle
+                ProjectName = userProject.ProjectTitle,
+                CurrentDate = userProject.CreatedDate
 
             };
 
-            
+
             return View(projectViewModel);
         }
 
@@ -189,34 +185,57 @@ namespace WeeklyProgram.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,UserId,TemplateId,ProjectTitle,Objectstext,ImageUrl,CreatedDate")] UserProject userProject)
+        public async Task<IActionResult> Edit(Guid id, [FromForm] ProjectViewModel projectViewModel)
         {
+            UserProject userProject = new UserProject()
+            {
+                Id = projectViewModel.Id,
+                UserId = projectViewModel.UserId,
+                ProjectTitle = projectViewModel.ProjectName,
+                TemplateId = projectViewModel.TemplateId,
+                Objectstext = JsonConvert.SerializeObject(projectViewModel.ObjectJson),
+                ImageUrl = projectViewModel.ImageUrl,
+                CreatedDate = projectViewModel.CurrentDate,
+            };
+            userProject.UserId = "1";
             if (id != userProject.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (userProject.ProjectTitle is not null)
             {
-                try
-                {
-                    _context.Update(userProject);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserProjectExists(userProject.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _context.UserProjects.Update(userProject);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(userProject);
+            else
+            {
+                ModelState.AddModelError("Model","اسم المشروع ضروري");
+            }
+            #region 
+            // if (ModelState.IsValid)
+            // {
+            //     try
+            //     {
+            //         _context.Update(userProject);
+            //         await _context.SaveChangesAsync();
+            //     }
+            //     catch (DbUpdateConcurrencyException)
+            //     {
+            //         if (!UserProjectExists(userProject.Id))
+            //         {
+            //             return NotFound();
+            //         }
+            //         else
+            //         {
+            //             throw;
+            //         }
+            //     }
+            //     return RedirectToAction(nameof(Index));
+            // }
+            #endregion
+            return View(projectViewModel);
         }
 
         // GET: UserProjects/Delete/5

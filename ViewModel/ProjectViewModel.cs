@@ -35,6 +35,10 @@ namespace WeeklyProgram.ViewModel
         public string? UserId { get; set; }
         public Guid TemplateId { get; set; }
 
+        [Display(Name ="تاريخ انشاء المشروع")]
+        [DataType(DataType.Date)]
+        public DateTime CurrentDate { get; set; }
+
 
     }
 }

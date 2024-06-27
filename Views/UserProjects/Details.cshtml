@@ -1,8 +1,6 @@
 ﻿@model ProjectViewModel
-
 @{
     ViewData["Title"] = "Details";
-
 }
 
 <h1 class="text-center">عرض المشروع</h1>
@@ -83,9 +81,9 @@
                     </table>
                 </div>
                 <div class="form-group text-center">
-                    <input type="submit" value="انشاء ملف" class="btn btn-primary" />
-                    <a class="btn btn-outline-secondary" asp-action="Index">الرجوع الى القائمة</a>
-                    <a class="btn btn-outline-secondary" asp-controller="UserProjects" asp-action="ProcessImage" asp-route-id="@Model.Id">انشاء الملف</a>
+                    
+                    <a class="btn btn-info" asp-action="Index">الرجوع الى القائمة</a>
+                    <a class="btn btn-outline-secondary" asp-controller="UserProjects" asp-action="ProcessImage" asp-route-id="@Model.Id">انشاء الملف <i class="fa-regular fa-image"></i></a>
                 </div>
         </form>
     </div>

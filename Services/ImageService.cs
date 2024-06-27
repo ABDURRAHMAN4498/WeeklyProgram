@@ -22,27 +22,44 @@ namespace WeeklyProgram.Services
             {
                 using (Graphics graphics = Graphics.FromImage(image))
                 {
-
-                    Font font = new Font("Arial", 24);
-                    Font font1 = new Font("Arial", 50);
                     StringFormat stringFormat = new StringFormat();
                     PrivateFontCollection privateFontCollection = new PrivateFontCollection();
-                    privateFontCollection.AddFontFile("wwwroot/fonts/Amiri-Regular.ttf");
+                    privateFontCollection.AddFontFile("wwwroot/fonts/Cairo-VariableFont_slnt,wght.ttf");
 
                     Brush brush = new SolidBrush(Color.FromArgb(0, 82, 62));
 
+
                     stringFormat.Alignment = StringAlignment.Far;
-                    graphics.DrawString("برنامجي المدرسي", font1, brush, new Point(image.Width - 200, 150), stringFormat);
+                    graphics.DrawString(projectViewModel.ProjectName, new Font(privateFontCollection.Families[0], 180, FontStyle.Bold, GraphicsUnit.World), brush, new Point(image.Width - 1200, 100), stringFormat);
 
                     stringFormat.Alignment = StringAlignment.Center;
                     stringFormat.LineAlignment = StringAlignment.Center;
                     stringFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
 
+
                     Point pointf = new Point(image.Width - 350, 760);
 
                     for (int i = 0; i < projectViewModel.ObjectJson.Length; i++)
                     {
-                        graphics.DrawString(projectViewModel.ObjectJson[i], font, brush, pointf, stringFormat);
+                        if (i % projectViewModel.ArrayColmun == 0 || 
+                        i % projectViewModel.ArrayColmun < 6 &&
+                         i < 6)
+                        {
+                            graphics.DrawString(projectViewModel.ObjectJson[i], new Font(privateFontCollection.Families[0], 60, FontStyle.Bold, GraphicsUnit.World), new SolidBrush(Color.White), pointf, stringFormat);
+                        }
+                        // else if (i % projectViewModel.ArrayColmun < 6 && i < 6)
+                        // {
+                        //     graphics.DrawString(projectViewModel.ObjectJson[i], new Font(privateFontCollection.Families[0], 60, FontStyle.Bold, GraphicsUnit.World), new SolidBrush(Color.White), pointf, stringFormat);
+                        // }
+                        else
+                        {
+                            graphics.DrawString(projectViewModel.ObjectJson[i], new Font(privateFontCollection.Families[0], 60, FontStyle.Bold, GraphicsUnit.World), brush, pointf, stringFormat);
+
+                        }
+
+
+
+
                         pointf.X -= 550;
 
                         if (pointf.X <= 140)
