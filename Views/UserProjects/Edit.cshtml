@@ -67,7 +67,7 @@
                     </thead>
                     <tbody>
 
-                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson.Length;)
+                        @for (int i = Model.ArrayColmun; i < Model.ObjectJson!.Length;)
                         {
                             <tr>
                                 @for (int j = 0; j < Model.ArrayColmun; j++)
@@ -88,8 +88,6 @@
             </div>
     </form>
 </div>
-
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

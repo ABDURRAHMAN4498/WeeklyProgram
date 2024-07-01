@@ -10,44 +10,52 @@
 <p>
     <a class="btn btn-success" asp-controller="UserProjects" asp-action="TemplateList">انشاء مشروع</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table table-dark">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectTitle)
-                </td>
-                <td>
-                    <img class="img-fluid" src="~/uploads/templates/@item.ImageUrl" alt="image" style="width:60px" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedDate)
-                </td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a> |
-                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="fa-solid fa-circle-info"></i></a> |
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="fa-solid fa-trash-can"></i></a> |
-                    <button onclick="showImageModal('@item.Id', '@item.ProjectTitle')" class="btn btn-secondary"><i class="fa-regular fa-image"></i></button>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>
+                    <a class="btn btn-success" asp-controller="UserProjects" asp-action="TemplateList">انشاء مشروع</a>
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectTitle)
+                    </td>
+                    <td>
+                        <img class="img-fluid" src="~/uploads/templates/@item.ImageUrl" alt="image" style="width:60px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-pen-to-square"></i></a> |
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-circle-info"></i></a> |
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i
+                                class="fa-solid fa-trash-can"></i></a> |
+                        <button onclick="showImageModal('@item.Id', '@item.ProjectTitle')" class="btn btn-secondary"><i
+                                class="fa-regular fa-image"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

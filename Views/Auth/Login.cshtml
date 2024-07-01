@@ -1,0 +1,37 @@
+@model UserLoginDto
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div class="row justify-content-center">
+
+    <div class="col-6">
+        <h2 class="text-center">تسجيل الدخول</h2>
+        <div class="card">
+            <div class="card-body">
+                <form asp-controller="Auth" asp-action="Login" method="post" >
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">عنوان البريد الالكتروني</label>
+                        <input asp-for="Email" class="form-control">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <div class="form-text">لن نشارك بريدك الإلكتروني أبدًا مع أي شخص آخر.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="Password"></label>
+                        <input class="form-control" asp-for="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">تذكرني</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                        <a asp-action="Add" asp-controller="User" class="btn btn-link">انشاء حساب</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

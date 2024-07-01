@@ -27,30 +27,27 @@ namespace WeeklyProgram.Services
                     privateFontCollection.AddFontFile("wwwroot/fonts/Cairo-VariableFont_slnt,wght.ttf");
 
                     Brush brush = new SolidBrush(Color.FromArgb(0, 82, 62));
-
-
-                    stringFormat.Alignment = StringAlignment.Far;
-                    graphics.DrawString(projectViewModel.ProjectName, new Font(privateFontCollection.Families[0], 180, FontStyle.Bold, GraphicsUnit.World), brush, new Point(image.Width - 1200, 100), stringFormat);
-
                     stringFormat.Alignment = StringAlignment.Center;
                     stringFormat.LineAlignment = StringAlignment.Center;
                     stringFormat.FormatFlags = StringFormatFlags.DirectionRightToLeft;
+
+
+                    graphics.DrawString(projectViewModel.ProjectName, new Font(privateFontCollection.Families[0], 180, FontStyle.Bold, GraphicsUnit.World), brush, new Point(image.Width / 2, image.Height / 10), stringFormat);
+
+
 
 
                     Point pointf = new Point(image.Width - 350, 760);
 
                     for (int i = 0; i < projectViewModel.ObjectJson.Length; i++)
                     {
-                        if (i % projectViewModel.ArrayColmun == 0 || 
+                        if (i % projectViewModel.ArrayColmun == 0 ||
                         i % projectViewModel.ArrayColmun < 6 &&
                          i < 6)
                         {
                             graphics.DrawString(projectViewModel.ObjectJson[i], new Font(privateFontCollection.Families[0], 60, FontStyle.Bold, GraphicsUnit.World), new SolidBrush(Color.White), pointf, stringFormat);
                         }
-                        // else if (i % projectViewModel.ArrayColmun < 6 && i < 6)
-                        // {
-                        //     graphics.DrawString(projectViewModel.ObjectJson[i], new Font(privateFontCollection.Families[0], 60, FontStyle.Bold, GraphicsUnit.World), new SolidBrush(Color.White), pointf, stringFormat);
-                        // }
+
                         else
                         {
                             graphics.DrawString(projectViewModel.ObjectJson[i], new Font(privateFontCollection.Families[0], 60, FontStyle.Bold, GraphicsUnit.World), brush, pointf, stringFormat);

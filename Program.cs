@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using WeeklyProgram.Data;
 using WeeklyProgram.Models;
 using WeeklyProgram.Services;
+using System.Reflection;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,21 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<ImageService>();
 
 builder.Services.ConfigureDbContext(builder.Configuration);
+
+builder.Services.AddSession();
+var assembly = Assembly.GetExecutingAssembly();
+builder.Services.AddAutoMapper(assembly);
+
+builder.Services.AddIdentity<AppUser, AppRole>(opt =>
+{
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.Password.RequireLowercase = false;
+    opt.Password.RequireUppercase = false;
+
+})
+    .AddRoleManager<RoleManager<AppRole>>()
+    .AddEntityFrameworkStores<ApplicationContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -47,7 +64,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

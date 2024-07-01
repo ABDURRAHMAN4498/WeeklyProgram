@@ -4,7 +4,7 @@
 @foreach (var category in Model)
 {
     <li>
-         <button type="button" class="btn btn-link" asp-controller="Template" asp-action="Index" asp-route-id="@category.Id">@category.Name</button>
+         <button type="button" class="btn " asp-controller="Template" asp-action="Index" asp-route-id="@category.Id">@category.Name</button>
         @if (category.SubCategories != null && category.SubCategories.Any())
         {
             @Html.Partial("_CategoryTree", category.SubCategories)
