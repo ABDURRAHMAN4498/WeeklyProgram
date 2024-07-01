@@ -1,5 +1,8 @@
 @model UserAddDto
 
+@{
+    ViewData["Title"] = "صفحة انشاء حساب";
+}
 <div class="container-xxl flex-grow-1 container-p-y ">
     <div class="row justify-content-center">
         <div class="col-6">
@@ -26,7 +29,7 @@
                         </div>
                         <div class="form-group my-2">
                             <select type="text" asp-for="RoleId" placeholder="" asp-items="@(new SelectList(Model.Roles,"Id","Name"))" class="form-control"></select>
-                            <span asp-validation-for="RoleId"></span>
+                            <span asp-validation-for="RoleId" ></span>
                         </div>
                         <div class="form-group my-2">
                             <input type="password" asp-for="Password" placeholder="كلمة السر" class="form-control"/>
@@ -34,6 +37,7 @@
                         </div>
                         <div class="text-center my-2">
                             <input type="submit" asp-for="Password" value="انشاء الحساب" class=" btn btn-primary"/>
+                            <span asp-validation-for="Password" ></span>
                         </div>
                     </div>
                 </form>
