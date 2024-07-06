@@ -1785,6 +1785,10 @@
       "PackagePath": "staticwebassets\\sneat\\yarn.lock"
     },
     {
+      "Id": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\UserProfileImage\\EmptyUser.jpg",
+      "PackagePath": "staticwebassets\\uploads\\UserProfileImage\\EmptyUser.jpg"
+    },
+    {
       "Id": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\templates\\594158d7-89dd-496d-8954-8e747154aac1.png",
       "PackagePath": "staticwebassets\\uploads\\templates\\594158d7-89dd-496d-8954-8e747154aac1.png"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4yD/ZfXEirM3rgkiQ2WMechaIiKGwdbVsr0OIrQwtDU=",
+  "Hash": "J5QSBtcOEXe4hfFMdakvZ6LVlmEnsFh/YvqMZw6ZDEk=",
   "Source": "WeeklyProgram",
   "BasePath": "_content/WeeklyProgram",
   "Mode": "Default",
@@ -9686,6 +9686,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\templates\\6f203499-e35b-4198-b850-23d308626a76.png"
+    },
+    {
+      "Identity": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\uploads\\UserProfileImage\\EmptyUser.jpg",
+      "SourceId": "WeeklyProgram",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Abdurrahman\\Desktop\\Aborami\\WeeklyProgram\\wwwroot\\",
+      "BasePath": "_content/WeeklyProgram",
+      "RelativePath": "uploads/UserProfileImage/EmptyUser.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\UserProfileImage\\EmptyUser.jpg"
     }
   ]
 }

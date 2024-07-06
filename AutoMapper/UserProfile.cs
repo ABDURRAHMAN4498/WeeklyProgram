@@ -9,6 +9,7 @@ namespace SonmezERP.Mapper
         {
             CreateMap<UserDto,AppUser>().ReverseMap();
             CreateMap<AppUser,UserAddDto>().ReverseMap();
+            CreateMap<AppUser,UserUpdateDto>().ReverseMap();
         }
     }
 }

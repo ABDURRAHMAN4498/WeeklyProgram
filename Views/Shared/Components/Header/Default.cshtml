@@ -1,0 +1,14 @@
+@model UserDto
+
+<li class="nav-item">
+    <a class="nav-link fw-bold" asp-action="Logout" asp-controller="Auth">تسجيل الخروج</a>
+</li>
+<div>&nbsp</div>
+
+<li class="nav-item row">
+    <a class="nav-link fw-bold" asp-action="Index" asp-controller="Account">
+        @Model.FirstName @Model.LastName (@Model.Role)
+        <img src="~/uploads/UserProfileImage/EmptyUser.jpg" style="width: 40px; border-radius: 50%;" alt="image">
+        
+    </a>
+</li>

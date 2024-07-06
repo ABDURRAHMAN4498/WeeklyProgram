@@ -53,5 +53,10 @@ namespace WeeklyProgram.Controllers
             await _sigInManager.SignOutAsync();
             return RedirectToAction("Index","Home");
         }
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }
